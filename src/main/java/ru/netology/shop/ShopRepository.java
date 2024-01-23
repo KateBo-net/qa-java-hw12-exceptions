@@ -35,11 +35,9 @@ public class ShopRepository {
     public void remove(int id) {
         Product[] tmp = new Product[products.length - 1];
         int copyToIndex = 0;
-
         if (findById(id) == null) {
             throw new NotFoundException("Element with id: " + id + " not found");
         }
-
         for (Product product : products) {
             if (product.getId() != id) {
                 tmp[copyToIndex] = product;
